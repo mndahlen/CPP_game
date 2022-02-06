@@ -1,0 +1,679 @@
+{
+    "end_of_round_money": 150,
+    "enemy_spawn_interval": 4,
+    "font": {
+        "arial": "arial.ttf",
+        "ostrich": "ostrich_regular.ttf"
+    },
+    "fps_limit": 30,
+    "game_entity": {
+        "base": {
+            "parameters": {
+                "life": 100,
+                "money": 100,
+                "texture_scale_factor": 0.5
+            },
+            "textures": [
+                "base"
+            ]
+        },
+        "dynamictower": {
+            "fighterjet": {
+                "parameters": {
+                    "cost": 100,
+                    "description": "The fighterjet tower strikes the viruses from the sky. It shoots handsanitizer in every direction in an attempt to end the pandemic.",
+                    "left_travel_distance": 55,
+                    "frames_per_texture": 2,
+                    "frames_per_turn": 60,
+                    "speed": 2,
+                    "spit_cooldown": 15,
+                    "texture_scale_factor": 1
+                },
+                "textures": [
+                    "FighterJet_ani1",
+                    "FighterJet_ani2",
+                    "FighterJet_ani3",
+                    "FighterJet_ani4",
+                    "Spit"
+                ]
+            }
+        },
+        "enemy": {
+            "covid": {
+                "parameters": {
+                    "1": {
+                        "dmg": 5,
+                        "hp": 2,
+                        "speed": 2
+                    },
+                    "2": {
+                        "dmg": 5,
+                        "hp": 3,
+                        "speed": 4
+                    },
+                    "3": {
+                        "dmg": 10,
+                        "hp": 5,
+                        "speed": 6
+                    },
+                    "4": {
+                        "dmg": 13,
+                        "hp": 10,
+                        "speed": 8
+                    },
+                    "5": {
+                        "dmg": 20,
+                        "hp": 15,
+                        "speed": 10
+                    },
+                    "6": {
+                        "dmg": 45,
+                        "hp": 20,
+                        "speed": 13
+                    },
+                    "texture_scale_factor": 0.5
+                },
+                "textures": [
+                    "virus"
+                ]
+            }
+        },
+        "moneybag": {
+            "parameters": {
+                "money_added": 25,
+                "playingfield_size": 700,
+                "speed": 5,
+                "texture_scale_factor": 0.5
+            },
+            "textures": [
+                "MoneyBag"
+            ]
+        },
+        "playerfigure": {
+            "parameters": {
+                "frames_per_texture": 2,
+                "speed": 5,
+                "texture_scale_factor": 0.5
+            },
+            "textures": [
+                "PlayerFigure_ani1",
+                "PlayerFigure_ani2_and_still",
+                "PlayerFigure_ani3"
+            ]
+        },
+        "playingfield": {
+            "grid": {
+                "1": [
+                    [
+                        0,
+                        0,
+                        2,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    [
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        0
+                    ],
+                    [
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    [
+                        0,
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        1,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    [
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    [
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        1,
+                        0,
+                        0,
+                        1,
+                        1,
+                        1,
+                        0,
+                        1,
+                        0
+                    ],
+                    [
+                        0,
+                        1,
+                        0,
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        1,
+                        0,
+                        1,
+                        0
+                    ],
+                    [
+                        0,
+                        1,
+                        1,
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        1,
+                        0,
+                        1,
+                        0
+                    ],
+                    [
+                        0,
+                        0,
+                        1,
+                        1,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        1,
+                        1,
+                        1,
+                        0
+                    ],
+                    [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    [
+                        0,
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    [
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                    ],
+                    [
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                        0
+                    ],
+                    [
+                        0,
+                        1,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    [
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        1,
+                        1,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    [
+                        0,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    [
+                        0,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        1,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1,
+                        0
+                    ],
+                    [
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        3,
+                        0
+                    ]
+                ]
+            },
+            "parameters": {
+                "road_square": {
+                    "parameters": {
+                        "square_size": 35
+                    },
+                    "textures": [
+                        "road_straight",
+                        "road_turn"
+                    ]
+                },
+                "tower_square": {
+                    "parameters": {
+                        "square_size": 35
+                    },
+                    "textures": "transparent"
+                }
+            },
+            "textures": [
+                "playfield",
+                "road_straight",
+                "transparent"
+            ]
+        },
+        "projectile": {
+            "spit": {
+                "parameters": {
+                    "damage": 2,
+                    "frames_per_texture": 2,
+                    "max_cooldown": 5,
+                    "speed": 15,
+                    "texture_scale_factor": 0.5
+                },
+                "textures": [
+                    "Spit"
+                ]
+            }
+        },
+        "statictower": {
+            "handsanitizer": {
+                "parameters": {
+                    "cost": 75,
+                    "description": "The hand sanitizer tower fires hand sanitizer at the closest enemy virus in an attempt to end the pandemic.",
+                    "detection_range": 10,
+                    "frames_per_texture": 30,
+                    "max_cooldown": 30,
+                    "texture_scale_factor": 0.5
+                },
+                "textures": [
+                    "HandSanitizerShoot_ani1",
+                    "HandSanitizerShoot_ani2",
+                    "HandSanitizerShoot_ani3",
+                    "Spit"
+                ]
+            }
+        }
+    },
+    "highscore": [
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "level": {
+        "1": {
+            "amount": 10,
+            "moneybag_time_interval": 10,
+            "time_interval": 2
+        },
+        "2": {
+            "amount": 25,
+            "moneybag_time_interval": 10,
+            "time_interval": 1.5
+        },
+        "3": {
+            "amount": 40,
+            "moneybag_time_interval": 3,
+            "time_interval": 1.5
+        },
+        "4": {
+            "amount": 45,
+            "moneybag_time_interval": 10,
+            "time_interval": 1.3
+        },
+        "5": {
+            "amount": 40,
+            "moneybag_time_interval": 4,
+            "time_interval": 1.2
+        },
+        "6": {
+            "amount": 50,
+            "moneybag_time_interval": 4,
+            "time_interval": 0.75
+        }
+    },
+    "max_level": 6,
+    "texture": {
+        "FighterJet_ani1": "FighterJet_ani1.png",
+        "FighterJet_ani2": "FighterJet_ani2.png",
+        "FighterJet_ani3": "FighterJet_ani3.png",
+        "FighterJet_ani4": "FighterJet_ani4.png",
+        "HandSanitizerShoot_ani1": "HandSanitizerShoot_ani1.png",
+        "HandSanitizerShoot_ani2": "HandSanitizerShoot_ani2.png",
+        "HandSanitizerShoot_ani3": "HandSanitizerShoot_ani3.png",
+        "MainMenu_Background": "MainMenu_Background.png",
+        "MoneyBag": "MoneyBag.png",
+        "PlayerFigure_ani1": "PlayerFigure_ani1.png",
+        "PlayerFigure_ani2_and_still": "PlayerFigure_ani2_and_still.png",
+        "PlayerFigure_ani3": "PlayerFigure_ani3.png",
+        "Spit": "Spit.png",
+        "background": "background.png",
+        "base": "base.png",
+        "button": "button.png",
+        "button_unclickable": "button_unclickable.png",
+        "grass": "grass.png",
+        "menu": "menu2.png",
+        "playfield": "playfield.png",
+        "road_straight": "road_straight.png",
+        "road_turn": "road_turn.png",
+        "transparent": "transparent.png",
+        "virus": "virus.png",
+        "playfield_wuhan" : "playfield_wuhan.png"
+    },
+    "waves": [
+        10,
+        20,
+        30,
+        40,
+        50
+    ]
+}

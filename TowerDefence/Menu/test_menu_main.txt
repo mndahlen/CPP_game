@@ -1,0 +1,50 @@
+#include <SFML/Graphics.hpp> // includes most things in SFML
+#include "Menu.hpp"
+#include <iostream>
+
+int const width{900};
+int const height{700};
+
+std::string const MEDIADIR{"../TowerDefence/media_files"};
+
+int main()
+{
+    sf::RenderWindow window{sf::VideoMode{width, height},"TowerDefence"};
+
+    sf::Texture * menu_texture{new sf::Texture()};
+    //sf::Texture menu_texture{};
+    sf::Texture button_texture{};
+    sf::Font font;
+    menu_texture->loadFromFile(MEDIADIR + "/png_images/menu.png");
+    button_texture.loadFromFile(MEDIADIR + "/png_images/button.png");
+    font.loadFromFile(MEDIADIR + "/fonts/arial.ttf");
+
+    Menu menu(200,350,200,700,menu_texture);
+    // menu.addButton(0,0,100,30, &button_texture, "button1", &font);
+    // menu.addButton(0,50,100,30, &button_texture, "button2", &font);
+    // menu.addButton(0,300,150,30, &button_texture, "button3", &font);
+    // menu.addButton(0,-300,150,30, &button_texture, "button4", &font);
+    // menu.addButton(100,-250,150,30, &button_texture, "button5", &font);
+    // menu.addButton(0,-200,70,70, &button_texture, "thicc", &font);
+
+    sf::Clock clock;
+    double const fps{60.0};
+    auto const target{sf::milliseconds(1000.0/fps)};
+    
+    while (window.isOpen())
+    {
+        clock.restart();
+        
+        window.clear(); 
+        menu.render(&window);
+        sf::Mouse mouse; 
+        auto mpos = mouse.getPosition(window);
+        std::cout << menu.getSelectedOption(mpos.x, mpos.y) << std::endl;
+        menu.setPosition(mpos.x, mpos.y);
+
+        window.display();
+
+        auto wait_time{target - clock.getElapsedTime()};
+        sleep(wait_time);
+    }
+}

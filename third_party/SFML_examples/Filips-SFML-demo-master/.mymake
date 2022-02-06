@@ -1,0 +1,37 @@
+[]
+library+=sfml-graphics
+library+=sfml-window
+library+=sfml-system
+
+[windows]
+#library=SFML\sfml-graphics.lib
+#library+=SFML\sfml-window.lib
+#library+=SFML\sfml-system.lib
+
+includeCl=-iquote
+libraryCl=-l
+localLibraryCl=
+defineCl=-D 
+
+flags=-std=c++11
+warnings=-Wall -Wextra
+flags+=-IC:\Users\Filip\Program\mingw64\include
+flags+=-O3
+
+#Compile the precompiled header.
+pchFile=stdafx.h.gch
+pchCompile=g++ <defines> <flags> <warnings> <file> -c <includes> -o <output>
+pchCompileCombined=no
+usePch=-include <noExt|pchFile>
+
+#Compile a single file.
+compile=*:g++ <defines> <flags> <warnings> <usePch*if|pch> <file> -c <includes> -o <output>
+
+linkFlags=
+#Link all files
+link=g++ <files> <linkFlags> <libs> -o <output>
+
+
+env+=PATH<=C:\Users\Filip\Program\mingw64\bin
+env+=LIB<=C:\Users\Filip\Program\mingw64\lib
+env+=INCLUDE<=C:\Users\Filip\Program\mingw64\include

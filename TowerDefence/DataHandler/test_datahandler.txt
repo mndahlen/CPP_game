@@ -1,0 +1,16 @@
+#include "DataHandler.hpp"
+#include <iostream>
+
+int main()
+{
+    DataHandler datahandler("../config/config.json");
+    nlohmann::json config;
+    config = datahandler.getConfig();
+
+    std::vector<std::string> texture_names = config["game_entity"]["playingfield"]["textures"];
+
+
+    std::cout << texture_names[0] << std::endl;
+
+    return 0;
+}

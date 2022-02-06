@@ -1,0 +1,64 @@
+#include <SFML/Graphics.hpp> // includes most things in SFML
+#include "Button.hpp"
+#include <iostream>
+
+int const width{900};
+int const height{700};
+
+std::string const MEDIADIR{"../TowerDefence/media_files"};
+
+void testWindow(sf::RenderWindow * window_ptr, sf::Sprite sprite)
+{
+    window_ptr->draw(sprite);
+}
+
+int main()
+{
+    sf::RenderWindow window{sf::VideoMode{width, height},"TowerDefence"};
+
+    std::map<std::string, sf::Texture> textures;
+    //textures = loadTextures();
+
+    //std::vector<GameObject> game_objects;
+    //game_objects = initGameObjects(std::map<std::string, sf::texture> const &textures);
+
+    sf::Texture texture;
+    texture.loadFromFile(MEDIADIR + "/png_images/button.png");
+    sf::Font font;
+    font.loadFromFile(MEDIADIR + "/fonts/arial.ttf");
+
+    Button button(450,350,100,40,&texture,"Ay lmao",&font);
+
+    sf::Clock clock;
+    double const fps{60.0};
+    auto const target{sf::milliseconds(1000.0/fps)};
+    
+    while (window.isOpen())
+    {
+        clock.restart();
+        window.clear(); 
+        //testWindow(&window, sprite);
+        button.render(&window);
+        sf::Mouse mouse; 
+        auto mpos = mouse.getPosition(window);
+        std::cout << button.mouseOnButton(mpos.x, mpos.y) << std::endl;
+        //button.setPosition(mpos.x, mpos.y);
+
+        window.display();
+
+        auto wait_time{target - clock.getElapsedTime()};
+        sleep(wait_time);
+    }
+}
+
+
+
+//std::map<std::string, sf::texture> loadTextures()
+//{
+
+//}
+
+//std::vector<GameObject> initGameObjects(std::map<std::string, sf::texture> const &textures)
+//{
+
+//}
